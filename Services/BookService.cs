@@ -22,17 +22,17 @@ namespace book_app.Services
         {
             return _books.Find(books => true).ToList();
         }
-        public Book Get(String id)
+        public Book Get(string id)
         {
             return _books.Find(book => book.Id == id).FirstOrDefault();
         }
 
-        public void Remove(String id)
+        public void Remove(string id)
         {
             _books.DeleteOne(book => book.Id == id);
         }
 
-        public void Update(String id, Book book)
+        public void Update(string id, Book book)
         {
             _books.ReplaceOne(book => book.Id == id, book);
         }
