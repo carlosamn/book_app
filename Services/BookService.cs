@@ -15,6 +15,7 @@ namespace book_app.Services
 
         public Book Create(Book book)
         {
+            book.updatedAt = DateTime.Now;
             _books.InsertOne(book);
             return book;
         }
@@ -34,6 +35,7 @@ namespace book_app.Services
 
         public void Update(string id, Book book)
         {
+             book.updatedAt = DateTime.Now;
             _books.ReplaceOne(book => book.Id == id, book);
         }
     }
