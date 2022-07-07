@@ -67,7 +67,7 @@ namespace book_app.Controllers
                 return NotFound($"Book with id {id} not found");
             }
             _bookService.Remove(id);
-            return Ok($"Book with id {id} has been deleted");
+            return Ok();
         }
     }
 }
